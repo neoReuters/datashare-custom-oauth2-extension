@@ -4,13 +4,33 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.example</groupId>
-  <artifactId>datashare-aws-lb-cookie</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <groupId>icij</groupId>
+  <artifactId>datashare-custom-oauth2-extension</artifactId>
+  <version>1.0</version>
 
-  <name>datashare-aws-lb-cookie</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <name>Datashare Custom OAuth2 Extension</name>
+  <url>http://www.icij.org</url>
+
+  <scm>
+    <url>https://github.com/neoReuters/datashare-custom-oauth2-extension</url>
+    <connection>scm:git:https://github.com/neoReuters/datashare-custom-oauth2-extension.git</connection>
+    <developerConnection>scm:git:https://github.com/neoReuters/datashare-custom-oauth2-extension.git</developerConnection>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>Thomas Anderson</name>
+      <email>thomas.anderson@thomsonreuters.com</email>
+      <organization>TR</organization>
+    </developer>
+  </developers>
+
+  <repositories>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+  </repositories>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,6 +44,31 @@
       <artifactId>junit</artifactId>
       <version>4.13.2</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.scribejava</groupId>
+      <artifactId>scribejava-core</artifactId>
+      <version>5.5.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.icij.datashare</groupId>
+      <artifactId>datashare-api</artifactId>
+      <version>13.7.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.icij.datashare</groupId>
+      <artifactId>datashare-cli</artifactId>
+      <version>13.5.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.ICIJ.datashare</groupId>
+      <artifactId>commons-test</artifactId>
+      <version>14.1.11</version>
+    </dependency>
+    <dependency>
+      <groupId>net.code-story</groupId>
+      <artifactId>http</artifactId>
+      <version>2.105</version>
     </dependency>
   </dependencies>
 
@@ -71,5 +116,15 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>10</source>
+          <target>10</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
